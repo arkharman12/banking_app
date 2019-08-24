@@ -1,0 +1,84 @@
+Harmanjot Singh
+Computing II
+Andrew Harris
+3 December 2018
+						Banking Management System Algorithm
+
+•Steps - abstract class Account{}:
+	1.Inside the Account class, firstly create a variable for savings account, current account, insufficient account balance, withdrawal limit under and withdrawal limit over. These all will be of 	type integer and finalized variables, so their value doesn’t change.
+	2.Crete a variable for account number and account password. Both of them will be of type string and private variables.
+	3.Next, create a protected and of type double variables for account balance, minimum balance, minimum withdrawal, maximum withdrawal and user account information.
+	4.Create a user information constructor, which will hold the objects for account number, account password and user information. 
+	5.Add setter and getter methods for account balance, account number, and account password.
+	6.Then create a method for unique account number. This method will be held responsible for creating a unique 8-digit account number for the user by using the random function.
+	7.In the same way, create a method for unique account password or account pin. This will be a unique 4-digit long pin for the user’s account.  
+	8.Create a method for paying bills. If the account has sufficient funds, then it will successfully pay the bill and subtract pill amount from the account balance. 
+	9.Create a method to deposit money in the account.
+	10.Create a method for transferring money between accounts. If the account has sufficient funds, then it will take out the money from first account and successfully deposit to the second account. 
+	11.Create a method for withdraw money from the account. If the withdrawal amount is not less than minimum withdrawal amount, not higher than maximum withdrawal amount and account has sufficient 	funds then the user can withdraw their money. Withdrawal amount will be subtracted from the account balance. 
+
+class AccountDashboard extends JFrame implements ActionListner{}:
+	1.First of all, welcome the user to their account.
+	2.Using the JTextField property, create a field for account number and amount of size 20 and 10. 
+	3.Using the JPasswordField, create a field for old password, new password and confirming the new password. All these fields will of size 20 and this where user can change their account password if 	they want to. 
+	4.Using the JButton, create a button for transfer money, withdraw money, deposit money, balance check, pay bill, user detail, change pin, save, and logout. 
+	5.Using the JButton again, create sub buttons (means they will show up after clicking on one of the buttons listed above) for transfer, withdraw deposit, pay and submit.  
+	6.Create left, right, top, bottom and center JPanel containers.
+	7.Then create AccountDashboard constructor, it will consist of GUI components that triggers a certain program action upon clicking the buttons. 
+	8.Create action performed method which will be responsible for starting other methods if certain button got clicked. For example, if user clicks the “Transfer Money” button then this method will 	help us directing to that specific method, so program can perform its calculations related to that task. 
+	9.Create different methods for generating transfer panel, deposit panel, account balance panel, pay bill panel, user details panel, pin panel, and clear panel.
+	10.Create a pay bill method, this method will be responsible for showing different window alerts depending on the user’s interactions, for instance, if the user account doesn’t have sufficient 	funds and they are trying to pay a bill as a result an alert window will pop up saying “You don’t have enough balance, Failed”. 
+	11.Create transfer money method, this method will be responsible for showing different window alerts depending on the user’s interactions, for instance, if the user account doesn’t have sufficient 	funds and they are trying to transfer money to some other account as a result an alert window will pop up saying “You don’t have enough balance, Failed”.
+	12.Create a withdraw method, this method will be responsible for showing window alerts when withdrawing money from an account just like past two points.
+	13.Create a deposit method, this method will be responsible for showing window alerts when depositting money from an account just like past three points.
+	14.Create a method for changing the password or pin of an account, this method will be responsible for showing window alerts when changing pin of an account just like past four points.
+
+class AccountDashboard2 extends JFrame implements ActionListner{}:
+	NOTE: The AccountDashboard2 class works very similar to AccountDashbaord class. The only difference between them is this class is dedicated to performing some of the same tasks but just for the 	second type of account in my program. Hence to avoid repetition in the algorithm, I am not going to write down the steps for this class.
+ 
+class Database{}:
+	1.Make a private database instance.
+	2.Create a Database constructor,  it will return a new instance of the database object if the value equals null other it will return the instance.
+	3.Create a method for getting the user account, this will collect the information about user’s account number and return it.
+	4.Create another method for getting the user account, if the user account and account password equals then it will just return the result.
+	5.As user is making new accounts start adding them to the list by making a add new account method.
+	6.Create a method for validating the user account number in the list and return true.
+	7.Create a method for saving user’s data. When the user is done using the program, initialize new buffered writer and try to add all of the accounts that user have created in a new file name 		called “AccountList.txt” and close the buffer to end the operation. Otherwise throw an exception in the catch block.
+	8.Creating a method for printing all of the accounts.
+	9.Finally create a new load data method and load the account information data using the buffered reader.
+
+class SavingsAccount extends Account{}:
+	1.Create a SavingsAccount constructor. In it, set the minimum account balance, minimum and maximum withdrawal limit and balance.
+	2.Create another constructor, which will set the account number, pin and balance.
+	3.Make setters for minimum balance and withdrawal limit.
+	4.Finally, make a getter to get the account type.
+
+class CurrentAccount extends Account{}:
+	1.Create a CurrentAccount constructor. In it, set the minimum account balance, minimum and maximum withdrawal limit and balance.
+	2.Create another constructor, which will set the account number, pin and balance for the account.
+	3.Make setters for minimum balance and withdrawal limit.
+	4.Finally, make a getter to get the account type.
+
+class SignUpWindow extends JFrame implements ActionListener{}:
+	1.Using the JTextField property, create a field for first name, last name, email, phone number, social security number, address and occupation of size 20. 
+	2.Using the JRadioButton, create male and female radio buttons and group them together using the ButtonGroup property so it would be easy to work with them.
+	3.Using the JComboBox , make drop down list buttons selecting the date of birth and account type. 
+	4.Also create back and create account buttons using the same method. Since this is the signup window so the user might want to go back if don’t need to create an account.
+	5.Create a SignUpWindow constructor, which will mostly consist of different GUI components of the whole window.
+	6.Create a method for generating the dates for the birthday.
+	7.Create a action performed method, which will send the user to the login screen if they presses the back button other they can create a new account on clicking the create account button.
+	8.Create a method to make sure the sign-up form is completely filled and return true. Otherwise return false.
+	9.Finally, create a method for creating an account but depending on if it’s a savings account or the current that user wants to create. 
+
+class UserInformation{}:
+	1.Make variables of String type for first name, last name, email, phone number, social security number, address occupation and gender.
+	2.Make a UserInformation constructor to refer all the instance variables of the current class.
+	3.Finally, make a method to convert all the user information of type string.
+
+class LogInWindow extends JFrame implements ActionListener{}:
+	1.Using the JPasswordField property, create a field for account password of size 20.
+	2.Using the JTextField property, create a field for account number of size 20.
+	3.Using the JButton property, create two new buttons for login or create a new account.
+	4.Make a LoginWindow constructor, which will consist of different GUI components of the whole window.
+	5.Make a new action performed method, which will get the user’s account information and log them in if the account number and password match. Otherwise it will show a dialog box showing the error 	message.
+	6.Finally, make a main method or driver method which start the whole program. 
